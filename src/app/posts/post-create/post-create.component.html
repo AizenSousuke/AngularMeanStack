@@ -1,12 +1,14 @@
 <mat-card color="primary">
-    <h2>Create post</h2>
-    <h3>Title</h3>
-    <mat-form-field>
-        <input matInput color="primary" [(ngModel)]="enteredTitle">
-    </mat-form-field>
-    <h3>Content</h3>
-    <mat-form-field>
-        <textarea matInput color="primary" rows="5" [(ngModel)]="enteredValue"></textarea>
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onCreatePost()">Create Post</button>
+    <form (ngSubmit)="onCreatePost($event)">
+        <h2 class="mat-h2">Create post</h2>
+        <h3 class="mat-h3">Title</h3>
+        <mat-form-field>
+            <input matInput color="primary" name="enteredTitle" [(ngModel)]="enteredTitle">
+        </mat-form-field>
+        <h3 class="mat-h3">Content</h3>
+        <mat-form-field>
+            <textarea matInput color="primary" rows="5" name="enteredValue" [(ngModel)]="enteredValue"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Create Post</button>
+    </form>
 </mat-card>

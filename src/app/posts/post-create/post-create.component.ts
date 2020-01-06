@@ -23,7 +23,11 @@ export class PostCreateComponent implements OnInit {
     })
   }
 
-  onCreatePost() {
+  onCreatePost(event) {
+    // Get the value and use it for temporary validation
+    console.log(event.target[0].value);
+    console.log(event.target[0]);
+    console.log(event.target[1].value);
     this.newPost = {
       title: this.enteredTitle,
       content: this.enteredValue

@@ -3,11 +3,14 @@
     <mat-accordion multi="true" *ngIf="posts.length > 0">
         <mat-expansion-panel *ngFor="let post of posts; index as i">
             <mat-expansion-panel-header>
-                <p>
+                <p class="mat-body">
                     Post #{{ i+1 }}: {{ post.title }}
                 </p>
             </mat-expansion-panel-header>
-            {{ post.content }}
+            <div class="mat-body-1">
+                {{ post.content }}
+            </div>
         </mat-expansion-panel>
     </mat-accordion>
+    <p class="info-text" *ngIf="posts.length <= 0">No posts yet.</p>
 </div>
