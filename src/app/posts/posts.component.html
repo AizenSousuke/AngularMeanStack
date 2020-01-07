@@ -3,12 +3,17 @@
     <mat-accordion multi="true" *ngIf="posts.length > 0">
         <mat-expansion-panel *ngFor="let post of posts; index as i">
             <mat-expansion-panel-header>
-                <p class="mat-body">
-                    Post #{{ i+1 }}: {{ post.title }}
-                </p>
+                <div>
+                    <p class="mat-body">
+                        Post #{{ i+1 }}: {{ post.title }}
+                    </p>
+                </div>
             </mat-expansion-panel-header>
             <div class="mat-body-1">
                 {{ post.content }}
+            </div>
+            <div class="deletePost">
+                <button mat-raised-button color="warn" (click)="deletePost(i)">Delete</button>
             </div>
         </mat-expansion-panel>
     </mat-accordion>

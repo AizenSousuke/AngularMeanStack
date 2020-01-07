@@ -5,3 +5,7 @@ div, mat-accordion {
 .info-text {
     text-align: center;
 }
+
+.deletePost {
+    float: right;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-posts',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  posts = [];
+  posts: Post[] = [];
 
   constructor() { 
   }
@@ -19,6 +20,11 @@ export class PostsComponent implements OnInit {
   addPosts(event) {
     console.log(event);
     this.posts.push(event);
+  }
+
+  deletePost(post) {
+    console.log(post);
+    this.posts.splice(post, 1);
   }
 
 }
